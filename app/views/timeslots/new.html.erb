@@ -1,0 +1,20 @@
+<h2>Create Timeslot</h2>
+
+<%= form_for(@timeslot) do |f| %>
+  <%= f.label :recording_session_date %>
+  <%= f.date_select :recording_session_date,
+    :order => [:month, :day, :year] %>
+  
+  <br />
+  <%= f.label :start_time %>
+  <%= f.time_select :start_time, :ampm => true %>
+  
+  <br />
+  <%= f.label :end_time %>
+  <%= f.time_select :end_time, :ampm => true %>
+  
+  <br />
+  <%= f.submit %>
+<% end %>
+
+<br />
