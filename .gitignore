@@ -16,3 +16,6 @@
 
 #SimpleCov
 /coverage
+
+# Zurb
+.sass-cache
