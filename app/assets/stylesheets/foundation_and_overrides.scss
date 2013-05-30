@@ -683,7 +683,7 @@ $custom-select-triangle-color: #baafb0;
 // $panel-padding: emCalc(20px);
 
 // We use these to set default font colors
-// $panel-font-color: #333;
+// $panel-font-color: #4e8964;
 // $panel-font-color-alt: #fff;
 
 //
@@ -1013,4 +1013,12 @@ $custom-select-triangle-color: #baafb0;
 
 .custom.dropdown.small.select_inline {
   display: inline-block;
+}
+
+div.schedule.panel {
+  margin-bottom: 0;
+}
+
+div.schedule.panel.callout {
+  margin-top: emCalc(20px);
 }
