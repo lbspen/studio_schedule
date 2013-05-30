@@ -1,2 +1,13 @@
 <h2>Schedule</h2>
+<% timeslots = @timeslots.sort_by { |a| [a.recording_session_date, a.start_time] } %>
+<% currentTs = nil %>
+<% timeslots.each do |ts| %>
+  <% if currentTs == nil || ts.recording_session_date != currentTs.recording_session_date %>
+    <%= ts.date_to_s %>
+    <% currentTs = ts.recording_session_date %>
+  <% end %>
+  <%= ts.start_time_to_s %> -
+  <%= ts.end_time_to_s %>
+<% end %>
+<br />
 <%= link_to "New Timeslot", new_timeslot_path %>

@@ -18,16 +18,20 @@
       </div>
 
       <div class="row">
-        <div class="large-6 columns">
-          <%= f.label :start_time %>
-          <%= f.time_select :start_time, {:ampm => true}, {:class => [:small, :select_inline] } %>
+        <div class="large-3 columns">
+          <%= f.label :start_time, :class => "inline" %>
+        </div>
+        <div class="large-9 columns">
+          <%= f.time_select :start_time, {:ampm => true}, {:class => [:small, :select_inline, "inline"] } %>
         </div>
       </div>
 
       <div class="row">
-        <div class="large-6 columns">
-          <%= f.label :end_time %>
-          <%= f.time_select :end_time, {:ampm => true}, {:class => [:small, :select_inline] } %>
+        <div class="large-3 columns">
+          <%= f.label :end_time, :class => "inline" %>
+        </div>
+        <div class="large-9 columns">
+          <%= f.time_select :end_time, {:ampm => true}, {:class => [:small, :select_inline, "inline"] } %>
         </div>
       </div>
 
