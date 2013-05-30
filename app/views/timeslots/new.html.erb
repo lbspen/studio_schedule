@@ -1,20 +1,38 @@
 <h2>Create Timeslot</h2>
 
-<%= form_for(@timeslot) do |f| %>
-  <%= f.label :recording_session_date %>
-  <%= f.date_select :recording_session_date,
-    :order => [:month, :day, :year] %>
-  
-  <br />
-  <%= f.label :start_time %>
-  <%= f.time_select :start_time, :ampm => true %>
-  
-  <br />
-  <%= f.label :end_time %>
-  <%= f.time_select :end_time, :ampm => true %>
-  
-  <br />
-  <%= f.submit %>
-<% end %>
 
-<br />
+<fieldset>
+<div class="row">
+
+  <div class="large-12 columns"> 
+    <%= form_for @timeslot, :html => {:class => "custom"} do |f| %>
+
+      <div class="row">
+        <div class="large-3 columns":>
+          <%= f.label :recording_session_date, :class => "inline" %>
+        </div>
+        <div class="large-9 columns">
+          <%= f.date_select :recording_session_date,
+          {:order => [:month, :day, :year]}, {:class => [:small, :select_inline] } %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-6 columns">
+          <%= f.label :start_time %>
+          <%= f.time_select :start_time, {:ampm => true}, {:class => [:small, :select_inline] } %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-6 columns">
+          <%= f.label :end_time %>
+          <%= f.time_select :end_time, {:ampm => true}, {:class => [:small, :select_inline] } %>
+        </div>
+      </div>
+
+      <%= f.submit "Create Timeslot", :class => [:medium, :secondary, :button] %>
+    <% end %>
+  </div>
+</div>
+</fieldset>

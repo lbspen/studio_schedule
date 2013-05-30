@@ -7,7 +7,7 @@ gem 'dynamic_form', '1.1.4'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,9 +19,8 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'zurb-foundation', '~> 4.0.0'
 end
-
-gem 'jquery-rails'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'
