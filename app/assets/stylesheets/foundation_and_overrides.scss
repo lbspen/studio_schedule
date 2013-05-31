@@ -29,7 +29,7 @@ $body-font-color: #2f334a;
 
 // We use these as default colors throughout
 $primary-color: #4e6894;
-$secondary-color: #4e6894;
+$secondary-color: #2f334a;
 $alert-color: #de6798;
 $success-color: #baafb0;
 
@@ -207,7 +207,7 @@ $header-font-color: #de6718;
 
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
-// $fieldset-border-width: 1px;
+$fieldset-border-width: 3px;
 $fieldset-border-color: #baafb0;
 // $fieldset-padding: emCalc(20px);
 // $fieldset-margin: emCalc(18px) 0;

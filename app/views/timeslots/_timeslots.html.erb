@@ -1,0 +1,31 @@
+<% if @timeslot != nil %>
+  <% timeslots = [@timeslot] %>
+<% else %>
+  <% timeslots = @timeslots.sort_by { |a| [a.recording_session_date, a.start_time] } %>
+<% end %>
+
+<% currentTs = nil %>
+<% timeslots.each do |ts| %>
+  <% if currentTs == nil || ts.recording_session_date != currentTs.recording_session_date %>
+    <div class="row">
+      <div class="large-12 columns panel callout schedule">
+        <h3><%= ts.date_to_s %></h3>
+      </div>
+    </div>
+    <% currentTs = ts %>
+  <% end %>
+
+  <div class="row">
+    <div class="large-10 columns panel schedule">
+      <%= ts.start_time_to_s %> -
+      <%= ts.end_time_to_s %>
+    </div>
+    <div class="large-1 columns panel schedule">
+      <%= link_to "Edit", edit_timeslot_path(ts) %>
+    </div>
+    <div class="large-1 columns panel schedule">
+      <%= link_to "Delete", timeslot_path(ts), :method => :delete,
+      :confirm => "Are you sure you want to delete?" %>    
+    </div>
+  </div>
+<% end %>

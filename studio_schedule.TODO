@@ -1,3 +1,12 @@
+Edit timeslot:
+
+Validation:
+ ☐ Validation of date, must be within 3 month window
+Next:
+ ☐ Nav
+ ☐ Set initial time and date on create new timeslot
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
 View timeslot:
  ✔ How to sort by date then start time? @done (13-05-30 12:39)
  ✔ Use callout panel for date, regular panel for times @done (13-05-30 15:03)
@@ -6,8 +15,3 @@ View timeslot:
  ✔ Display by date then start time @done (13-05-30 14:53)
  ✔ change callout panel font color and size @done (13-05-30 15:35)
  ✔ add .schedule to schedule panels @done (13-05-30 15:00)
-Validation:
- ☐ Validation of date, must be within 3 month window
-Next:
- ☐ Nav
- ☐ Set initial time and date on create new timeslot

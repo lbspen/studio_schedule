@@ -1,24 +1,4 @@
 <h2>Schedule</h2>
-<% timeslots = @timeslots.sort_by { |a| [a.recording_session_date, a.start_time] } %>
-
-<% currentTs = nil %>
-<% timeslots.each do |ts| %>
-  <% if currentTs == nil || ts.recording_session_date != currentTs.recording_session_date %>
-    <div class="row">
-      <div class="large-12 columns panel callout schedule">
-        <h3><%= ts.date_to_s %></h3>
-      </div>
-    </div>
-    <% currentTs = ts %>
-  <% end %>
-  
-  <div class="row">
-    <div class="large-12 columns panel schedule">
-      <%= ts.start_time_to_s %> -
-      <%= ts.end_time_to_s %>
-    </div>
-  </div>
-
-<% end %>
+<%= render 'timeslots' %>
 <br />
 <%= link_to "New Timeslot", new_timeslot_path %>
