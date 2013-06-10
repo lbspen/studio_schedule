@@ -2,7 +2,7 @@ StudioSchedule::Application.routes.draw do
 
   root :to => "timeslots#index"
 
-  resources :timeslots
+  resources :timeslots, :clients
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

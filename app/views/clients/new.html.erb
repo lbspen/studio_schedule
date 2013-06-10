@@ -1,0 +1,21 @@
+<h2>New Client</h2>
+<fieldset>
+<div class="row">
+  <div class="large-12 columns">
+    <%= form_for @client, :html => {:class => "custom"} do |f| %>
+
+      <div class="row">
+        <div class="large-2 columns">
+          <%= f.label :first_name, :class => "inline" %>
+        </div>
+        <div class="large-4 columns">
+          <%= f.text_field :first_name %>
+        </div>
+      </div>
+
+      <%= f.submit %>
+
+    <% end %>
+  </div>
+</div>
+</fieldset>

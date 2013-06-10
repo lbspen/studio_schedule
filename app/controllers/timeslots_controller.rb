@@ -11,8 +11,12 @@ class TimeslotsController < ApplicationController
 
   def create
     @timeslot = Timeslot.new(params[:timeslot])
-    @timeslot.save
-    redirect_to @timeslot, :notice => "Timeslot has been created."
+    if @timeslot.save
+      redirect_to @timeslot, :notice => "Timeslot has been created."
+    else
+      flash[:alert] = "Timeslot has not been created."
+      render :action => "new"
+    end
   end
 
   def show

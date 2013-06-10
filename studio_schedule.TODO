@@ -1,8 +1,15 @@
-Edit timeslot:
-
-Validation:
+Client Model:
+ ☐ Create client
+ ☐ Edit client
+ ☐ View client (later only for engineer)
+ ☐ Delete client (later only for engineer)
+Client Sign up:
+ ☐ Welcome page for root
+ ☐ Hook up devise
+ ☐ Namespace for client?
+ ☐ Authorization
+Later:
  ☐ Validation of date, must be within 3 month window
-Next:
  ☐ Nav
  ☐ Set initial time and date on create new timeslot
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
