@@ -7,7 +7,12 @@ class ClientsController < ApplicationController
   end
 
   def create
-    flash[:notice] = "Client created successfully."
-    redirect_to :action => index
+    @client = Client.new(params[:client])
+    @client.save
+    redirect_to @client, :notice => "Client created successfully."
+  end
+
+  def show
+    @client = Client.find(params[:id])
   end
 end

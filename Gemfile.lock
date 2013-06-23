@@ -30,6 +30,11 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.4)
     arel (3.0.2)
+    better_errors (0.9.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.0.4)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -53,6 +58,7 @@ GEM
     coffee-script-source (1.6.2)
     columnize (0.3.6)
     database_cleaner (0.6.7)
+    debug_inspector (0.0.2)
     debugger (1.6.0)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -151,6 +157,9 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    simple_form (2.1.0)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -185,6 +194,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   capybara (= 1.1.2)
   capybara-webkit
   coffee-rails (~> 3.2.1)
@@ -202,6 +213,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   rspec-rails (~> 2.11)
   sass-rails (~> 3.2.3)
+  simple_form
   simplecov
   sqlite3
   uglifier (>= 1.0.3)

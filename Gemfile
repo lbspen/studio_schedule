@@ -13,6 +13,7 @@ gem 'fullcalendar-rails'
 
 gem 'sqlite3'
 gem 'jquery-rails'
+gem 'simple_form'
 gem 'validates_timeliness', '~> 3.0'
 
 # Gems used only for assets and not required
@@ -26,6 +27,11 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation', '~> 4.0.0'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test, :development do

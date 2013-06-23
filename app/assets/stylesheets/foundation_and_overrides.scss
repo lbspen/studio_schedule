@@ -900,7 +900,7 @@ $custom-select-triangle-color: #baafb0;
 //
 
 // These control the background color for the table and even rows
-// $table-bg: #fff;
+$table-bg: #f9f9f9;
 // $table-even-row-bg: #f9f9f9;
 
 // These control the table cell border style
@@ -1025,4 +1025,9 @@ div.schedule.panel.callout {
 
 .alert-box {
   background-color: #de6718;  
+}
+
+.leftheader {
+  text-align: left;
+  width: 500px;
 }

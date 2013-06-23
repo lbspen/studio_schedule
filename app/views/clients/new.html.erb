@@ -2,19 +2,13 @@
 <fieldset>
 <div class="row">
   <div class="large-12 columns">
-    <%= form_for @client, :html => {:class => "custom"} do |f| %>
-
-      <div class="row">
-        <div class="large-2 columns">
-          <%= f.label :first_name, :class => "inline" %>
-        </div>
-        <div class="large-4 columns">
-          <%= f.text_field :first_name %>
-        </div>
-      </div>
-
-      <%= f.submit %>
-
+    <%= simple_form_for @client do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :phone %>
+      <%= f.input :email %>
+      <%= f.input :referral_source, :collection => ['Friend', 'Web search', 'Other'], :as => :radio_buttons %>
+      <%= f.button :submit %>
     <% end %>
   </div>
 </div>
