@@ -1,5 +1,9 @@
 == Studio Scheduler Application
 
+The purpose of this application is to provide an interface for users to book an appointment in a studio.  In addition to booking a timeslot on a calendar, users will also be able to reserve resources for use during the appointment. 
+
+An admin user will be able to block off timeslots on the calendar, preventing users from making reservations during those times.
+
 The purpose of this application is to provide users with an interface for reserving studio timeslots.
 
 Features:
@@ -7,3 +11,4 @@ Features:
 - date selector
 - time selector
 - real-time calendar update for reserved timeblock (needs implementation)
+
