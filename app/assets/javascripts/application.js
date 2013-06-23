@@ -22,7 +22,7 @@
 $(document).foundation();
 
 $(function() {
-  $( "#datepicker" ).datepicker();
+  $("#datepicker").datepicker({dateFormat: 'yyyy-mm-dd'});
   $('.pick-time').timepicker();
   $('#calendar').fullCalendar({
     defaultView: 'agendaWeek'

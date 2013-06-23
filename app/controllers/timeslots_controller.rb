@@ -26,8 +26,12 @@ class TimeslotsController < ApplicationController
   end
 
   def update
-    @timeslot.update_attributes(params[:timeslot])
-    redirect_to @timeslot, :notice => "Timeslot has been updated."
+    if @timeslot.update_attributes(params[:timeslot])
+      redirect_to @timeslot, :notice => "Timeslot has been updated."
+    else
+      flash[:alert] = "Timeslot was not updated."
+      render :action => "edit"
+    end
   end
 
   def destroy

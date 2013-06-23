@@ -37,7 +37,9 @@ group :test, :development do
 end
 
 group :test do
+  gem 'database_cleaner', '~> 0.6.7'
   gem 'capybara', '1.1.2'
+  gem "capybara-webkit" 
   gem 'factory_girl', '2.6.4'
   gem 'simplecov', :require => false
 end

@@ -8,9 +8,9 @@ feature 'Creating Timeslots -' do
   end
    
   scenario 'Can create a Timeslot' do
-    select_date("2013,December,7", :from => "Recording session date") 
-    select_time("02 PM", "00", :from => "Start time")
-    select_time("04 PM", "30", :from => "End time")
+    fill_in("datepicker", :with => "2013-12-07")
+    fill_in("Start time", :with => "2:00pm")
+    fill_in("End time", :with => "4:30pm")
     click_button "Create Timeslot" 
     page.should have_content("Timeslot has been created")
     page.should have_content("December 7, 2013")
@@ -20,9 +20,9 @@ feature 'Creating Timeslots -' do
   end
 
   scenario "can not create a timeslot in the past" do
-    select_date("2012,December,7", :from => "Recording session date") 
-    select_time("02 PM", "00", :from => "Start time")
-    select_time("04 PM", "30", :from => "End time")
+    fill_in("datepicker", :with => "2012-12-07")
+    fill_in("Start time", :with => "2:00pm")
+    fill_in("End time", :with => "4:30pm")
     click_button 'Create Timeslot'
     page.should have_content("Timeslot has not been created.")
   end
