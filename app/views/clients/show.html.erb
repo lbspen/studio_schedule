@@ -1,25 +1,44 @@
 <h2>Client</h2>
 <div class="row">
-    <table class="leftheader">
-  <div class="large-6 columns">
-      <tr>
-        <th>Name:</th>
-        <td><%= @client.first_name %> <%= @client.last_name %></td>
-      </tr>
-      <tr>
-        <th>Phone:</th>
-        <td><%= @client.phone %></td>
-      </tr>
-      <tr>
-        <th>Email:</th>
-        <td><%= @client.email %></td>
-      </tr>
-      <tr>
-        <th>Referral Source:</th>
-        <td><%= @client.referral_source %></td>
-      </tr>
-    </table>
+  <div class="large-5 columns panel" id="show-client">
+    <div class="row">
+      <div class="large-6 columns text-right">
+        <strong>Name:</strong>
+      </div>
+      <div class="large-6 columns">
+        <%= @client.first_name %> <%= @client.last_name %>  
+      </div>
+    </div>
+    <div class="row ">
+      <div class="large-6 columns text-right">
+        <strong>Phone:</strong>
+      </div>
+      <div class="large-6 columns">
+        <%= @client.phone %>  
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns text-right">
+        <strong>Email:</strong>
+      </div>
+      <div class="large-6 columns">
+        <%= @client.email %>  
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns text-right">
+        <strong>Referral Source:</strong>
+      </div>
+      <div class="large-6 columns">
+        <%= @client.referral_source %>  
+      </div>
+    </div>
   </div>
-  <div class="large-6 columns"></div>
+  <div class="large-2 columns">
+    <ul class="side-nav">
+      <li><a href="#"><%= link_to "View", client_path(@client) %></a></li>
+      <li><a href="#"><%= link_to "Edit", edit_client_path(@client) %></a></li>
+    </ul>
+  </div>
+  <div class="large-5 columns"></div>
 </div>
-<br />

@@ -26,12 +26,6 @@ feature 'Creating Clients -' do
     page.should have_content("Client created successfully.") 
     client = Client.all[0]
     page.current_path.should == client_path(client)
-
-    page.should have_content(first)
-    page.should have_content(last)
-    page.should have_content(phone)
-    page.should have_content(email)
-    page.should have_content(referral)
   end
 
   scenario "Can't create with empty fields" do 
