@@ -1,8 +1,14 @@
 Client Model:
- ☐ Create client
+ ☐ View all clients
  ☐ Edit client
  ☐ View client (later only for engineer)
  ☐ Delete client (later only for engineer)
+ ☐ Navigation on client html pages
+ ✔ Initialize referral source to blank @done (13-06-23 15:38)
+ Validation of client fields:
+   ✔ Presence @done (13-06-23 15:38)
+   ✔ Phone format @done (13-06-23 17:26)
+   ✔ Email format @done (13-06-23 16:49)
 Client Sign up:
  ☐ Welcome page for root
  ☐ Hook up devise
@@ -12,8 +18,10 @@ Later:
  ☐ Validation of date, must be within 3 month window
  ☐ Nav
  ☐ Set initial time and date on create new timeslot
+ ☐ Referral source other has associated description
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Create client @done (13-06-23 12:43)
 View timeslot:
  ✔ How to sort by date then start time? @done (13-05-30 12:39)
  ✔ Use callout panel for date, regular panel for times @done (13-05-30 15:03)

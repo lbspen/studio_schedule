@@ -1,15 +1,11 @@
 <h2>New Client</h2>
 <fieldset>
-<div class="row">
-  <div class="large-12 columns">
-    <%= simple_form_for @client do |f| %>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :phone %>
-      <%= f.input :email %>
-      <%= f.input :referral_source, :collection => ['Friend', 'Web search', 'Other'], :as => :radio_buttons %>
-      <%= f.button :submit %>
-    <% end %>
-  </div>
-</div>
+  <%= simple_form_for @client do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :phone, :title => "Example: xxx-xxx-xxxx" %>
+    <%= f.input :email %>
+    <%= f.input :referral_source, :collection => ['Friend', 'Web search', 'Other'], :as => :radio_buttons %>
+    <%= f.button :submit %>
+  <% end %>
 </fieldset>

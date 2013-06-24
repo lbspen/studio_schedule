@@ -8,8 +8,12 @@ class ClientsController < ApplicationController
 
   def create
     @client = Client.new(params[:client])
-    @client.save
-    redirect_to @client, :notice => "Client created successfully."
+    if @client.save
+      redirect_to @client, :notice => "Client created successfully."
+    else
+      flash[:alert] = "Client was not created."
+      render :action => "new"
+    end
   end
 
   def show
