@@ -6,7 +6,6 @@ gem 'dynamic_form', '1.1.4'
 gem 'jquery-ui-rails'
 gem 'jquery-timepicker-rails'
 gem 'fullcalendar-rails'
-gem 'sqlite3'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'validates_timeliness', '~> 3.0'
@@ -29,6 +28,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.11'
   gem 'pry-rails'
   gem 'pry-debugger'
