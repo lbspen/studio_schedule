@@ -9,6 +9,8 @@ gem 'fullcalendar-rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'validates_timeliness', '~> 3.0'
+gem 'puma'
+gem 'foreman'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -20,7 +22,6 @@ end
 group :production do
   gem 'pg'
 end
-
 
 group :development do
   gem 'better_errors'
