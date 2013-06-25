@@ -11,6 +11,8 @@ gem 'simple_form'
 gem 'validates_timeliness', '~> 3.0'
 gem 'puma'
 gem 'foreman'
+gem 'jbuilder'
+gem 'active_model_serializers'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

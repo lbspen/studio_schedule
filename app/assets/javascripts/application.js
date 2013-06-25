@@ -21,10 +21,5 @@
 
 $(document).foundation();
 
-$(function() {
-  $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
-  $('.pick-time').timepicker();
-  $('#calendar').fullCalendar({
-    defaultView: 'agendaWeek'
-  });
-});
+
+
