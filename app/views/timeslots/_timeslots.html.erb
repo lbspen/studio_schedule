@@ -8,7 +8,7 @@
 <% timeslots.each do |ts| %>
   <% if currentTs == nil || ts.recording_session_date != currentTs.recording_session_date %>
     <div class="row">
-      <div class="large-12 columns panel callout schedule">
+      <div class="large-12 columns panel callout collapse">
         <h3><%= ts.date_to_s %></h3>
       </div>
     </div>
@@ -16,14 +16,14 @@
   <% end %>
 
   <div class="row">
-    <div class="large-10 columns panel schedule">
+    <div class="large-10 columns panel collapse">
       <%= ts.start_time_to_s %> -
       <%= ts.end_time_to_s %>
     </div>
-    <div class="large-1 columns panel schedule">
+    <div class="large-1 columns panel collapse">
       <%= link_to "Edit", edit_timeslot_path(ts) %>
     </div>
-    <div class="large-1 columns panel schedule">
+    <div class="large-1 columns panel collapse">
       <%= link_to "Delete", timeslot_path(ts), :method => :delete,
       :confirm => "Are you sure you want to delete?" %>    
     </div>

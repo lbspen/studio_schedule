@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_filter :find_client, :only => [:show, :edit, :update] 
+  before_filter :find_client, :only => [:show, :edit, :update, :destroy] 
 
   def index
     @clients = Client.all
@@ -32,6 +32,12 @@ class ClientsController < ApplicationController
       flash[:alert] = "Client has not been updated."
       render :action => "edit"
     end
+  end
+
+  def destroy
+    @client.destroy
+    flash[:notice] = "Client was deleted."
+    redirect_to clients_path
   end
 
   private
