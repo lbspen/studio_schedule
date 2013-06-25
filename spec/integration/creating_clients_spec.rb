@@ -46,18 +46,21 @@ feature 'Creating Clients -' do
     within(".client_referral_source") do      
       page.should have_content("can't be blank")      
     end
+    page.current_path.should == clients_path
   end
 
   scenario "Can't create with invalid email" do 
     fill_in("Email", :with => "abcd")
     click_button("Create Client")
-    page.should have_content("invalid email format")  
+    page.should have_content("invalid email format")
+    page.current_path.should == clients_path
   end
 
   scenario "Can't create with invalid phone" do
     fill_in("Phone", :with => "513231")
     click_button("Create Client")
-    page.should have_content("invalid phone number")  
+    page.should have_content("invalid phone number")
+    page.current_path.should == clients_path  
   end
 end
 

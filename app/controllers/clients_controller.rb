@@ -1,6 +1,11 @@
 class ClientsController < ApplicationController
+  before_filter :find_client, :only => [:show, :edit, :update] 
+
   def index
     @clients = Client.all
+  end
+
+  def show
   end
 
   def new
@@ -17,7 +22,21 @@ class ClientsController < ApplicationController
     end
   end
 
-  def show
+  def edit
+  end
+
+  def update
+    if @client.update_attributes(params[:client])
+      redirect_to @client, :notice => "Client has been updated."
+    else
+      flash[:alert] = "Client has not been updated."
+      render :action => "edit"
+    end
+  end
+
+  private
+
+  def find_client
     @client = Client.find(params[:id])
   end
 end
