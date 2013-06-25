@@ -7,6 +7,11 @@ class TimeslotsController < ApplicationController
 
   def new
     @timeslot = Timeslot.new
+    @timeslots = Timeslot.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @timeslots }
+    end
   end
 
   def create
