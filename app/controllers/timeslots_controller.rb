@@ -3,15 +3,14 @@ class TimeslotsController < ApplicationController
 
   def index
     @timeslots = Timeslot.all
-  end
-
-  def new
-    @timeslot = Timeslot.new
-    @timeslots = Timeslot.all
     respond_to do |format|
       format.html
       format.json { render json: @timeslots }
     end
+  end
+
+  def new
+    @timeslot = Timeslot.new
   end
 
   def create
@@ -25,6 +24,7 @@ class TimeslotsController < ApplicationController
   end
 
   def show
+    binding.pry
   end
 
   def edit

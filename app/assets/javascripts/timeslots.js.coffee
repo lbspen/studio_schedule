@@ -15,7 +15,7 @@ $ ->
             right: "month, agendaWeek, agendaDay"
 
         eventSources: [{
-            url: '/timeslots/new.json'
+            url: '/timeslots.json'
         }]
 
         error: console.log(arguments[0])
