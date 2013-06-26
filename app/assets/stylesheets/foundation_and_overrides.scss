@@ -1015,23 +1015,27 @@ $table-bg: #f9f9f9;
   display: inline-block;
 }
 
-div.schedule.panel {
-  margin-bottom: 0;
+div.callout {
+  margin-top: emCalc(20px);
 }
 
-div.schedule.panel.callout {
-  margin-top: emCalc(20px);
+div.panel.collapse {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .alert-box {
   background-color: #de6718;  
 }
 
-.leftheader {
-  text-align: left;
-  width: 500px;
+#clients {
+  width: 600px;
 }
 
 .radio_buttons small {
   margin-top: 10px;
+}
+
+.text-right {
+  text-align: right;
 }

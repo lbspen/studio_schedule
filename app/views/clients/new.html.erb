@@ -1,11 +1,4 @@
 <h2>New Client</h2>
 <fieldset>
-  <%= simple_form_for @client do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :phone, :title => "Example: xxx-xxx-xxxx" %>
-    <%= f.input :email %>
-    <%= f.input :referral_source, :collection => ['Friend', 'Web search', 'Other'], :as => :radio_buttons %>
-    <%= f.button :submit %>
-  <% end %>
+  <%= render 'form' %>
 </fieldset>
