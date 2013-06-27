@@ -11,9 +11,11 @@ class TimeslotsController < ApplicationController
 
   def new
     @timeslot = Timeslot.new
+    @date = Date.new
   end
 
   def create
+    # binding.pry
     @timeslot = Timeslot.new(params[:timeslot])
     if @timeslot.save
       redirect_to @timeslot, :notice => "Timeslot has been created."
