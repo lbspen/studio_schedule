@@ -1,6 +1,4 @@
 Client Model:
- ☐ Edit client
- ☐ Delete client 
  ☐ Navigation on client html pages
 Client Sign up:
  ☐ Welcome page for root
@@ -16,6 +14,8 @@ Later:
  ☐ Client restricted access to their own information
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Edit client @done (13-06-26 23:48)
+ ✔ Delete client @done (13-06-26 23:48)
  ✔ View all clients @done (13-06-24 12:21)
   Validation of client fields:
    ✔ Presence @done (13-06-23 15:38)

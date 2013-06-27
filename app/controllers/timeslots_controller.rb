@@ -5,7 +5,7 @@ class TimeslotsController < ApplicationController
     @timeslots = Timeslot.all
     respond_to do |format|
       format.html
-      format.json { render json: @timeslots }
+      # format.json { render json: @timeslots }
     end
   end
 
@@ -15,13 +15,8 @@ class TimeslotsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @timeslot = Timeslot.new(params[:timeslot])
-    timeslot_date = request.filtered_parameters['timeslot_date']
-    start_time = timeslot_date+"T"+@timeslot.start_time.to_s.split(" ")[1]
-    end_time = timeslot_date+"T"+@timeslot.end_time.to_s.split(" ")[1]
-    @timeslot.start_time = start_time
-    @timeslot.end_time = end_time
+    construct_datetimes
     if @timeslot.save
       redirect_to @timeslot, :notice => "Timeslot has been created."
     else
@@ -37,7 +32,8 @@ class TimeslotsController < ApplicationController
   end
 
   def update
-    if @timeslot.update_attributes(params[:timeslot])
+    construct_datetimes
+    if @timeslot.save
       redirect_to @timeslot, :notice => "Timeslot has been updated."
     else
       flash[:alert] = "Timeslot was not updated."
@@ -51,8 +47,18 @@ class TimeslotsController < ApplicationController
   end
 
   private
+  
   def find_timeslot
     @timeslot = Timeslot.find(params[:id])
   end
 
+  def construct_datetimes
+    timeslot_date_str = params['timeslot_date']
+    start_time_str = DateTime.parse(params['timeslot']['start_time']).strftime("%H:%M:%S")
+    end_time_str = DateTime.parse(params['timeslot']['end_time']).strftime("%H:%M:%S")
+    start_time = Time.zone.parse(timeslot_date_str + ' ' + start_time_str)
+    end_time = Time.zone.parse(timeslot_date_str + ' ' + end_time_str)
+    @timeslot.update_attribute(:start_time, start_time)
+    @timeslot.update_attribute(:end_time, end_time)
+  end
 end

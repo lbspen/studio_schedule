@@ -14,4 +14,16 @@ class Timeslot < ActiveRecord::Base
   def end_time_to_s
     end_time.strftime("%l:%M%P")
   end
+
+  def timeslot_date
+    if (start_time != nil)
+      date_to_s
+    else 
+      Time.zone.now.strftime("%Y-%m-%e")
+    end
+  end
+
+  def overlaps?(other)
+    (self.start_time.to_i..self.end_time.to_i).overlaps?(other.start_time.to_i..other.end_time.to_i)
+  end
 end
