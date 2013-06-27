@@ -1,4 +1,8 @@
-<% timeslots = @timeslots.sort_by { |a| [a.start_time] } %>
+<% if @timeslot != nil %>
+  <% timeslots = [@timeslot] %>
+<% else %>
+  <% timeslots = @timeslots.sort_by { |a| [a.start_time] } %>
+<% end %>
 
 <% currentTs = nil %>
 <% timeslots.each do |ts| %>
