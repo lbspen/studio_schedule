@@ -19,3 +19,20 @@ $ ->
         }]
 
         error: console.log(arguments[0])
+    # input checkbox onclick
+
+    $("li input").on 'click', ->
+        cost_data = $(@).next("label").data("cost")
+        cost_estimate = Number($("#cost_estimate").text())
+        if $(@).is(":checked")
+            cost_estimate += cost_data
+        else
+            cost_estimate = cost_estimate - cost_data
+        $("#cost_estimate").text(cost_estimate)
+
+
+
+        # if checked
+            # subtract .next(label) value
+        # else
+            # add .next(label) value

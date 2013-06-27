@@ -8,10 +8,15 @@
           <%= f.text_field :start_time, class: "pick-time" %>
           <%= f.label :end_time %>
           <%= f.text_field :end_time, class: "pick-time" %>
-          <% StudioAsset.all.each do |asset| %>
-            <%= check_box_tag "timeslot[studio_asset_ids][]", asset.id %>
-            <%= label_tag dom_id(asset), asset.name, "data-cost" => asset.base_cost %><br/>
-          <% end %>
+          <div id="assets-list" class="large-block-grid-2">
+            <% StudioAsset.all.each do |asset| %>
+              <li>
+                <%= check_box_tag "timeslot[studio_asset_ids][]", asset.id %>
+                <%= label_tag dom_id(asset), asset.name, "data-cost" => asset.base_cost %>
+              </li>
+            <% end %>
+          </div>
+          <h4 class="subheader">Cost Estimate: $<span id="cost_estimate"></span></h4>
           <%= f.input :notes %>
           <%= f.input :other %>
           <%= f.submit :class => [:medium, :secondary, :button] %>
