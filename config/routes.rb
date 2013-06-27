@@ -1,5 +1,8 @@
 StudioSchedule::Application.routes.draw do
 
+  resources :studio_assets
+
+
   root :to => "timeslots#index"
 
   resources :timeslots, :clients

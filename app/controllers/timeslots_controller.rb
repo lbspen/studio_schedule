@@ -11,7 +11,7 @@ class TimeslotsController < ApplicationController
 
   def new
     @timeslot = Timeslot.new
-    @date = Date.new
+    @studio_assets = StudioAsset.all
   end
 
   def create
