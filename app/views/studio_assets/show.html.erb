@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @studio_asset.name %>
+</p>
+
+<p>
+  <b>Base cost:</b>
+  <%= @studio_asset.base_cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_studio_asset_path(@studio_asset) %> |
+<%= link_to 'Back', studio_assets_path %>

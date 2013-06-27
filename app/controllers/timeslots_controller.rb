@@ -11,11 +11,10 @@ class TimeslotsController < ApplicationController
 
   def new
     @timeslot = Timeslot.new
-    @date = Date.new
+    @studio_assets = StudioAsset.all
   end
 
   def create
-    # binding.pry
     @timeslot = Timeslot.new(params[:timeslot])
     timeslot_date = request.filtered_parameters['timeslot_date']
     start_time = timeslot_date+"T"+@timeslot.start_time.to_s.split(" ")[1]
