@@ -3,19 +3,25 @@ class TimeslotsController < ApplicationController
 
   def index
     @timeslots = Timeslot.all
-  end
-
-  def new
-    @timeslot = Timeslot.new
-    @timeslots = Timeslot.all
     respond_to do |format|
       format.html
       format.json { render json: @timeslots }
     end
   end
 
+  def new
+    @timeslot = Timeslot.new
+    @date = Date.new
+  end
+
   def create
+    # binding.pry
     @timeslot = Timeslot.new(params[:timeslot])
+    timeslot_date = request.filtered_parameters['timeslot_date']
+    start_time = timeslot_date+"T"+@timeslot.start_time.to_s.split(" ")[1]
+    end_time = timeslot_date+"T"+@timeslot.end_time.to_s.split(" ")[1]
+    @timeslot.start_time = start_time
+    @timeslot.end_time = end_time
     if @timeslot.save
       redirect_to @timeslot, :notice => "Timeslot has been created."
     else

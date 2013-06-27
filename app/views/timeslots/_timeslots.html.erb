@@ -1,15 +1,15 @@
 <% if @timeslot != nil %>
   <% timeslots = [@timeslot] %>
 <% else %>
-  <% timeslots = @timeslots.sort_by { |a| [a.recording_session_date, a.start_time] } %>
+  <% timeslots = @timeslots.sort_by { |a| [a.start_time] } %>
 <% end %>
 
 <% currentTs = nil %>
 <% timeslots.each do |ts| %>
-  <% if currentTs == nil || ts.recording_session_date != currentTs.recording_session_date %>
+  <% if currentTs == nil || ts.start_time != currentTs.start_time %>
     <div class="row">
       <div class="large-12 columns panel callout collapse">
-        <h3><%= ts.date_to_s %></h3>
+        <h3><%= ts.date_to_s %></h3>i
       </div>
     </div>
     <% currentTs = ts %>
@@ -25,7 +25,7 @@
     </div>
     <div class="large-1 columns panel collapse">
       <%= link_to "Delete", timeslot_path(ts), :method => :delete,
-      :confirm => "Are you sure you want to delete?" %>    
+      :confirm => "Are you sure you want to delete?" %>
     </div>
   </div>
 <% end %>
