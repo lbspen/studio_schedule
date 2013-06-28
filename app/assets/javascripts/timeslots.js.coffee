@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-    $("#datepicker").datepicker dateFormat: "yy-mm-dd"
+    $("#datepicker").datepicker dateFormat: "mm/dd/yy"
     $(".pick-time").timepicker(
         minTime: "9:00:00",
         maxTime: "19:00:00"
@@ -19,3 +19,21 @@ $ ->
         }]
 
         error: console.log(arguments[0])
+    # input checkbox onclick
+
+    $("li input").on 'click', ->
+        cost_data = $(@).next("label").data("cost")
+        cost_estimate = Number($("#cost_estimate").text())
+
+        if $(@).is(":checked")
+            cost_estimate += cost_data
+        else
+            cost_estimate = cost_estimate - cost_data
+        $("#cost_estimate").text(cost_estimate)
+
+
+
+        # if checked
+            # subtract .next(label) value
+        # else
+            # add .next(label) value

@@ -3,7 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 span.fc-header-title h2 {
+    margin-top: 6px;
     color: grey;
     font-size: 15px;
 
+}
+
+#assets-list label {
+    display: inline;
+}
+
+#cost_estimate_header {
+    margin-bottom: 45px;
+}
+
+#timeslot_form h4.subheader {
+    line-height: .4em;
+    margin-top: 1.2em;
+    margin-bottom: none;
+}
+
+table.fc-header {
+    border: none;
+    tr{
+        background-color: #E8E8DF;
+        border-top-color: none;
+    }
+}
+
+#assets-list {
+    margin-bottom: 28px;
 }

@@ -7,6 +7,9 @@ class Timeslot < ActiveRecord::Base
   has_many :timeslot_assets
   has_many :studio_assets, :through => :timeslot_assets
 
+  has_many :timeslot_assets
+  has_many :studio_assets, through: :timeslot_assets
+
   def date_to_s
     start_time.strftime("%B %-d, %Y")
   end
