@@ -4,9 +4,9 @@ gem 'rails', '3.2.13'
 gem 'dynamic_form', '1.1.4'
 
 gem 'jquery-ui-rails'
+gem "jquery-rails", "2.3.0"
 gem 'jquery-timepicker-rails'
 gem 'fullcalendar-rails'
-gem 'jquery-rails'
 gem 'simple_form'
 gem 'validates_timeliness', '~> 3.0'
 gem 'puma'
