@@ -14,6 +14,7 @@ gem 'devise'
 gem 'foreman'
 gem 'jbuilder'
 gem 'active_model_serializers'
+gem 'activeadmin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
