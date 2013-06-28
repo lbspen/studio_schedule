@@ -17,7 +17,8 @@ studio_assets = StudioAsset.create([
         { name: 'mastering', base_cost: 50},
         { name: 'production', base_cost: 50},
         { name: 'post production', base_cost: 50},
-        { name: 'instrumentation', base_cost: 50}
+        { name: 'instrumentation', base_cost: 50},
+        { name: 'other', base_cost: 0}
 
     ])
 

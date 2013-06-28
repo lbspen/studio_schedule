@@ -6,6 +6,8 @@ class Timeslot < ActiveRecord::Base
 
   validates_date :start_time, :on_or_after => DateTime.now
 
+  belongs_to :user
+
   def date_to_s
     start_time.strftime("%B %-d, %Y")
   end

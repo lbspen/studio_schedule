@@ -1,5 +1,6 @@
 class TimeslotsController < ApplicationController
-  before_filter :find_timeslot, :only => [:edit, :show, :update, :destroy]
+  before_filter :find_timeslot, only: [:edit, :show, :update, :destroy]
+  before_filter :authenticate_user!, only: [:create]
 
   def index
     @timeslots = Timeslot.all
@@ -19,9 +20,9 @@ class TimeslotsController < ApplicationController
     timeslot_date = request.filtered_parameters['timeslot_date'].to_date
     start_time = Time.mktime(timeslot_date.year, timeslot_date.month, timeslot_date.day, @timeslot.start_time.hour, @timeslot.start_time.min)
     end_time = Time.mktime(timeslot_date.year, timeslot_date.month, timeslot_date.day, @timeslot.end_time.hour, @timeslot.end_time.min)
-    binding.pry
     @timeslot.start_time = start_time
     @timeslot.end_time = end_time
+    @timslot.user = current_user
     if @timeslot.save
       redirect_to @timeslot, :notice => "Timeslot has been created."
     else

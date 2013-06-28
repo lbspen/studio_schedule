@@ -1,41 +1,50 @@
 <div class="row">
   <fieldset>
     <%= simple_form_for @timeslot do |f| %>
-        <div id="timeslot_form" class="large-4 columns":>
-          <h4 class="subheader">Select Date and Time</h4>
-          <hr>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>Date</label>
-              <input name="timeslot_date" id="datepicker" type="text"></input>
-            </div>
-            <div class="large-4 columns">
-              <%= f.label :start_time %>
-              <%= f.text_field :start_time, class: "pick-time" %>
-            </div>
-            <div class="large-4 columns">
-              <%= f.label :end_time %>
-              <%= f.text_field :end_time, class: "pick-time" %>
-            </div>
-          </div>
-          <h4 class="subheader">Select Assets</h4>
-          <hr>
-          <div id="assets-list" class="large-block-grid-2">
-            <% StudioAsset.all.each do |asset| %>
-              <li>
-                <%= check_box_tag "timeslot[studio_asset_ids][]", asset.id %>
-                <%= label_tag dom_id(asset), asset.name, "data-cost" => asset.base_cost %>
-              </li>
-            <% end %>
-          </div>
-          <%= f.input :other %>
-          <hr>
-          <h4 id="cost_estimate_header" class="subheader">Cost Estimate: $<span id="cost_estimate"></span></h4>
-          <%= f.submit :class => [:expand, :secondary, :button] %>
+    <div id="timeslot_form" class="large-4 columns":>
+      <h4 class="subheader">Select Date and Time</h4>
+      <hr>
+      <div class="row">
+        <div class="large-4 columns">
+          <label>Date</label>
+          <input name="timeslot_date" id="datepicker" type="text"></input>
         </div>
-        <div class="large-8 push-1 columns">
-          <div id="calendar"></div>
+        <div class="large-4 columns">
+          <%= f.label :start_time %>
+          <%= f.text_field :start_time, class: "pick-time" %>
         </div>
+        <div class="large-4 columns">
+          <%= f.label :end_time %>
+          <%= f.text_field :end_time, class: "pick-time" %>
+        </div>
+      </div>
+      <p>Hours:<span id="studio_hours">0</p></p>
+      <h4 class="subheader">Select Assets</h4>
+      <hr>
+      <div id="assets-list" class="large-block-grid-2">
+        <!-- <ul> -->
+          <% StudioAsset.all.each do |asset| %>
+          <li>
+            <%= check_box_tag "timeslot[studio_asset_ids][]", asset.id %>
+            <%= label_tag dom_id(asset), asset.name, "data-cost" => asset.base_cost, id: asset.name %>
+          </li>
+          <% end %>
+        <!-- </ul> -->
+      </div>
+      <div id="other_text_input" class= "hidden">
+        <%= f.input :other %>
+      </div>
+      <hr>
+      <h4 id="cost_estimate_header" class="subheader">Cost Estimate: $<span id="cost_estimate">0</span></h4>
+      <% if current_user %>
+        <%= f.submit "Request Timeslot", :class => [:expand, :secondary, :button] %>
+      <% else %>
+        <article><em>Sign in to request an appointment</em></article>
+      <% end -%>
+    </div>
+    <div class="large-8 columns">
+      <div id="calendar"></div>
+    </div>
     <% end %>
   </fieldset>
 </div>
