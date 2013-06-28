@@ -22,7 +22,7 @@ class TimeslotsController < ApplicationController
     end_time = Time.mktime(timeslot_date.year, timeslot_date.month, timeslot_date.day, @timeslot.end_time.hour, @timeslot.end_time.min)
     @timeslot.start_time = start_time
     @timeslot.end_time = end_time
-    @timslot.user = current_user
+    @timeslot.user = current_user
     if @timeslot.save
       redirect_to @timeslot, :notice => "Timeslot has been created."
     else
