@@ -16,9 +16,10 @@ class TimeslotsController < ApplicationController
 
   def create
     @timeslot = Timeslot.new(params[:timeslot])
-    timeslot_date = request.filtered_parameters['timeslot_date']
-    start_time = timeslot_date+"T"+@timeslot.start_time.to_s.split(" ")[1]
-    end_time = timeslot_date+"T"+@timeslot.end_time.to_s.split(" ")[1]
+    timeslot_date = request.filtered_parameters['timeslot_date'].to_date
+    start_time = Time.mktime(timeslot_date.year, timeslot_date.month, timeslot_date.day, @timeslot.start_time.hour, @timeslot.start_time.min)
+    end_time = Time.mktime(timeslot_date.year, timeslot_date.month, timeslot_date.day, @timeslot.end_time.hour, @timeslot.end_time.min)
+    binding.pry
     @timeslot.start_time = start_time
     @timeslot.end_time = end_time
     if @timeslot.save
