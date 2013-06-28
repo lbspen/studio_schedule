@@ -1,16 +1,13 @@
 StudioSchedule::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   devise_for :users
   ActiveAdmin.routes(self)
 
+
+  resources :timeslots
   resources :studio_assets
-
-  root :to => "timeslots#index"
-
-  resources :timeslots, :clients
+  root to: "timeslots#index"
 
 
 
