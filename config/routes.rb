@@ -2,8 +2,7 @@ StudioSchedule::Application.routes.draw do
 
   resources :studio_assets
 
-
-  root :to => "timeslots#index"
+  root :to => "timeslots#new"
 
   resources :timeslots, :clients
 

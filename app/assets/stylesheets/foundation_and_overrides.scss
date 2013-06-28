@@ -15,9 +15,9 @@
 // $em-base: 16px;
 
 // We use these to control various global styles
-$body-bg: #e8e8df;
-$body-font-color: #2f334a;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-bg: #000;
+$body-font-color: #FFF;
+$body-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -28,10 +28,10 @@ $body-font-color: #2f334a;
 // $text-direction: ltr;
 
 // We use these as default colors throughout
-$primary-color: #4e6894;
-$secondary-color: #2f334a;
-$alert-color: #de6798;
-$success-color: #baafb0;
+$primary-color: #993333;
+$secondary-color: #774433;
+$alert-color: #ee8844;
+$success-color: #997755;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -65,7 +65,7 @@ $success-color: #baafb0;
 // Grid Variables
 //
 
-// $row-width: 62.5em;
+$row-width: 990px;
 // $column-gutter: 1.875em;
 // $total-columns: 12;
 
@@ -85,10 +85,10 @@ $success-color: #baafb0;
 //
 
 // We use these to control header font styles
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
-$header-font-color: #de6718;
+$header-font-color: #FFF;
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;
@@ -104,7 +104,7 @@ $header-font-color: #de6718;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
-// $subheader-font-color: lighten($header-font-color, 30%);
+$subheader-font-color: #CCC;
 // $subheader-font-weight: 300;
 // $subheader-top-margin: .2em;
 // $subheader-bottom-margin: .5em;
@@ -191,7 +191,7 @@ $header-font-color: #de6718;
 // $label-pointer: pointer;
 // $label-font-size: emCalc(14px);
 // $label-font-weight: 500;
-// $label-font-color: lighten(#000, 30%);
+$label-font-color: #FFF;
 // $label-bottom-margin: emCalc(3px);
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
@@ -670,7 +670,7 @@ $custom-select-triangle-color: #baafb0;
 //
 
 // We use these to control the background and border styles
-// $panel-bg: darken(#fff, 5%);
+$panel-bg: #000;
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -1038,4 +1038,58 @@ div.panel.collapse {
 
 .text-right {
   text-align: right;
+}
+
+fieldset {
+  width: 960px;
+  margin-left: 15px;
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+    text-transform: uppercase;
+    padding: 30px 0 0 20px;
+    height: 78px;
+}
+
+#menu {
+    background: transparent url("header_mid.png") no-repeat scroll 0 0;
+    height: 51px;
+    margin: 0 auto;
+    width: 960px;
+    float: left;
+}
+
+#menu ul {
+    line-height: normal;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu li {
+    float: left;
+    padding: 2px 10px 0 20px;
+}
+
+#menu a {
+    font-size: 1.0em;
+    letter-spacing: -1px;
+    text-decoration: none;
+    color: #CCC;
+}
+
+#menu a:hover {
+    text-decoration: underline;
+    color: #FFF;
+}
+
+header {
+    background: transparent url("header_top.png") no-repeat scroll 0 0;
+    height: 80px;
+    margin: 0 auto;
+    width: 960px;
 }

@@ -7,10 +7,10 @@
 <head>
   <meta charset="utf-8" />
 
-   <!-- Uncomment to make IE8 render like IE7 -->
-   <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+  <!-- Uncomment to make IE8 render like IE7 -->
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-   <!-- Set the viewport width to device width for mobile -->
+  <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title><%= content_for?(:title) ? yield(:title) : "Studio Schedule" %></title>
@@ -22,6 +22,24 @@
 <body>
   <div class="row">
     <div class="large-12 columns">
+      <header>
+        <h1>SOPHIAHAT STUDIOS</h1>
+      </header>
+      <div id="menu">
+        <ul>
+          <li><a href="http://www.sophiahatstudio.com/index.html">Home</a></li>
+          <li><a href="http://www.sophiahatstudio.com/aboutus.html">About Us</a></li>
+          <li><a href="http://www.sophiahatstudio.com/services.html">Services</a></li>
+          <li><a href="http://www.sophiahatstudio.com/layout.html">Layout</a></li>
+          <li><a href="http://www.sophiahatstudio.com/gear.html">Gear</a></li>
+          <li><a href="http://www.sophiahatstudio.com/mp3player/sounds4.html">Music</a></li>
+          <li><a href="http://www.sophiahatstudio.com/sound_design.html">Sound Design</a></li>
+          <li><a href="http://www.sophiahatstudio.com/rates.html">Rates</a></li>
+          <li><a href="http://www.sophiahatstudio.com/clients.html">Clients</a></li>
+          <li><a href="http://www.sophiahatstudio.com/resources.html">Resources</a></li>
+          <li><a href="http://www.sophiahatstudio.com/contact.html">Contact/Booking</a></li>
+        </ul>
+      </div>
       <% flash.each do |key, value| %>
         <div class='flash alert-box' id='<%= key %>'>
           <%= value %>
@@ -30,7 +48,7 @@
       <%= yield %>
     </div>
   </div>
-  
+
 
   <%= javascript_include_tag "application" %>
 </body>
