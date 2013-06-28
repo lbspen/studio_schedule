@@ -1,6 +1,7 @@
 <div class="row">
   <fieldset>
-    <%= simple_form_for @timeslot do |f| %>
+    <%= form_for @timeslot do |f| %>
+      <%= error_messages_for @timeslot, :header_message => "", :message => "" %>
         <div class="large-3 columns":>
           <%= f.label :timeslot_date %>
           <%= f.text_field :timeslot_date, name: "timeslot_date", id: "datepicker" %>
@@ -12,8 +13,10 @@
             <%= check_box_tag "timeslot[studio_asset_ids][]", asset.id %>
             <%= label_tag dom_id(asset), asset.name, "data-cost" => asset.base_cost %><br/>
           <% end %>
-          <%= f.input :notes %>
-          <%= f.input :other %>
+          <%= f.label :notes %>
+          <%= f.text_field :notes %>
+          <%= f.label :other %>
+          <%= f.text_field :other %>
           <%= f.submit :class => [:medium, :secondary, :button] %>
         </div>
         <div class="large-8 push-1 columns">

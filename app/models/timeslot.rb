@@ -2,6 +2,7 @@ class Timeslot < ActiveRecord::Base
   attr_accessible :start_time, :end_time, :timeslot_date, :studio_asset_ids, :notes, :other
 
   validates_date :start_time, :on_or_after => DateTime.now
+  validate :check_for_schedule_conflicts
 
   has_many :timeslot_assets
   has_many :studio_assets, :through => :timeslot_assets
@@ -28,5 +29,17 @@ class Timeslot < ActiveRecord::Base
 
   def overlaps?(other)
     (self.start_time.to_i..self.end_time.to_i).overlaps?(other.start_time.to_i..other.end_time.to_i)
+  end
+
+  def check_for_schedule_conflicts
+    if Timeslot.all.any? do |ts|
+        if ts != self 
+          ts.overlaps? self
+        else
+          false
+        end 
+      end  
+      errors[:base] << 'Timeslot conflicts with an existing timeslot'
+    end
   end
 end
