@@ -1,5 +1,7 @@
 StudioSchedule::Application.routes.draw do
 
+  devise_for :users
+
   resources :studio_assets
 
   root :to => "timeslots#index"
