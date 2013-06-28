@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature "Deleting timeslot" do
   scenario "Deleting a timeslot" do
-    timeslot = Factory(:timeslot, :recording_session_date => DateTime.now)
+    timeslot = Factory(:timeslot)
     value = timeslot.date_to_s
     visit "/"
     click_link "Delete"

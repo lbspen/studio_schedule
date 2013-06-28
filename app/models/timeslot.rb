@@ -5,6 +5,13 @@ class Timeslot < ActiveRecord::Base
   has_many :studio_assets, through: :timeslot_assets
 
   validates_date :start_time, :on_or_after => DateTime.now
+  validate :check_for_schedule_conflicts
+
+  has_many :timeslot_assets
+  has_many :studio_assets, :through => :timeslot_assets
+
+  has_many :timeslot_assets
+  has_many :studio_assets, through: :timeslot_assets
 
   belongs_to :user
 
@@ -20,4 +27,30 @@ class Timeslot < ActiveRecord::Base
     end_time.strftime("%l:%M%P")
   end
 
+<<<<<<< HEAD
+=======
+  def timeslot_date
+    if (start_time != nil)
+      date_to_s
+    else
+      Time.zone.now.strftime("%Y-%m-%e")
+    end
+  end
+
+  def overlaps?(other)
+    (self.start_time.to_i..self.end_time.to_i).overlaps?(other.start_time.to_i..other.end_time.to_i)
+  end
+
+  def check_for_schedule_conflicts
+    if Timeslot.all.any? do |ts|
+        if ts != self
+          ts.overlaps? self
+        else
+          false
+        end
+      end
+      errors[:base] << 'Timeslot conflicts with an existing timeslot'
+    end
+  end
+>>>>>>> a06365b019ab3a12f3bd65e7315e3b41980c1ba3
 end

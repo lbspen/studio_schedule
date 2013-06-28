@@ -1,23 +1,23 @@
 <div class="row">
   <fieldset>
     <%= simple_form_for @timeslot do |f| %>
+<<<<<<< HEAD
     <div id="timeslot_form" class="large-4 columns":>
       <h4 class="subheader">Select Date and Time</h4>
       <hr>
+      <label>Date</label>
+      <input name="timeslot_date" id="datepicker" type="text"></input>
       <div class="row">
-        <div class="large-4 columns">
-          <label>Date</label>
-          <input name="timeslot_date" id="datepicker" type="text"></input>
-        </div>
-        <div class="large-4 columns">
+        <div class="large-6 columns">
           <%= f.label :start_time %>
           <%= f.text_field :start_time, class: "pick-time" %>
         </div>
-        <div class="large-4 columns">
+        <div class="large-6 columns">
           <%= f.label :end_time %>
           <%= f.text_field :end_time, class: "pick-time" %>
         </div>
       </div>
+<<<<<<< HEAD
       <p>Hours:<span id="studio_hours">0</p></p>
       <h4 class="subheader">Select Assets</h4>
       <hr>
@@ -35,15 +35,15 @@
         <%= f.input :other %>
       </div>
       <hr>
+    </div>
+    <div class="large-8 columns">
       <h4 id="cost_estimate_header" class="subheader">Cost Estimate: $<span id="cost_estimate">0</span></h4>
+      <div id="calendar"></div>
       <% if current_user %>
-        <%= f.submit "Request Timeslot", :class => [:expand, :secondary, :button] %>
+        <%= f.submit "Request Booking", :class => [:expand, :secondary, :button] %>
       <% else %>
         <article><em>Sign in to request an appointment</em></article>
       <% end -%>
-    </div>
-    <div class="large-8 columns">
-      <div id="calendar"></div>
     </div>
     <% end %>
   </fieldset>

@@ -6,6 +6,7 @@ StudioSchedule::Application.routes.draw do
   ActiveAdmin.routes(self)
 
 
+
   resources :timeslots
   resources :studio_assets
 

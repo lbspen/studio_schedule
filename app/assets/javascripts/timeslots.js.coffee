@@ -46,9 +46,12 @@ $ ->
             cost_estimate = cost_estimate - cost_data
         $("#cost_estimate").text(cost_estimate)
 
+<<<<<<< HEAD
     $("label#other").prev("input").on 'click', ->
         console.log "hi"
         $("#other_text_input").toggle('show')
 
         alert("Diff in seconds: " + (second - first))
 
+=======
+>>>>>>> a06365b019ab3a12f3bd65e7315e3b41980c1ba3
