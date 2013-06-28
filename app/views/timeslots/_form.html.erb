@@ -1,12 +1,16 @@
 <div class="row">
   <fieldset>
     <%= simple_form_for @timeslot do |f| %>
-<<<<<<< HEAD
     <div id="timeslot_form" class="large-4 columns":>
       <h4 class="subheader">Select Date and Time</h4>
       <hr>
-      <label>Date</label>
-      <input name="timeslot_date" id="datepicker" type="text"></input>
+
+      <div class="row">
+        <div class="large-6 columns">
+          <label>Date</label>
+          <input name="timeslot_date" id="datepicker" type="text"></input>
+        </div>
+      </div>
       <div class="row">
         <div class="large-6 columns">
           <%= f.label :start_time %>
@@ -17,7 +21,6 @@
           <%= f.text_field :end_time, class: "pick-time" %>
         </div>
       </div>
-<<<<<<< HEAD
       <p>Hours:<span id="studio_hours">0</p></p>
       <h4 class="subheader">Select Assets</h4>
       <hr>

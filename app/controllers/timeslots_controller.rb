@@ -6,7 +6,7 @@ class TimeslotsController < ApplicationController
     @timeslots = Timeslot.all
     respond_to do |format|
       format.html
-      # format.json { render json: @timeslots }
+      format.json { render json: @timeslots }
     end
   end
 

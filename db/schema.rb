@@ -60,8 +60,6 @@ ActiveRecord::Schema.define(:version => 20130628195448) do
     t.datetime "updated_at",      :null => false
   end
 
-<<<<<<< HEAD
-=======
   create_table "studio_assets", :force => true do |t|
     t.string   "name"
     t.integer  "base_cost"
@@ -76,7 +74,6 @@ ActiveRecord::Schema.define(:version => 20130628195448) do
     t.datetime "updated_at",      :null => false
   end
 
->>>>>>> a06365b019ab3a12f3bd65e7315e3b41980c1ba3
   add_index "timeslot_assets", ["studio_asset_id"], :name => "index_timeslot_assets_on_studio_asset_id"
   add_index "timeslot_assets", ["timeslot_id"], :name => "index_timeslot_assets_on_timeslot_id"
 
@@ -87,10 +84,7 @@ ActiveRecord::Schema.define(:version => 20130628195448) do
     t.datetime "updated_at", :null => false
     t.text     "notes"
     t.text     "other"
-<<<<<<< HEAD
     t.integer  "user_id"
-=======
->>>>>>> a06365b019ab3a12f3bd65e7315e3b41980c1ba3
   end
 
   create_table "users", :force => true do |t|

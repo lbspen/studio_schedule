@@ -27,8 +27,6 @@ class Timeslot < ActiveRecord::Base
     end_time.strftime("%l:%M%P")
   end
 
-<<<<<<< HEAD
-=======
   def timeslot_date
     if (start_time != nil)
       date_to_s
@@ -52,5 +50,4 @@ class Timeslot < ActiveRecord::Base
       errors[:base] << 'Timeslot conflicts with an existing timeslot'
     end
   end
->>>>>>> a06365b019ab3a12f3bd65e7315e3b41980c1ba3
 end
