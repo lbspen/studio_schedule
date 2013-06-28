@@ -1,7 +1,7 @@
 <div class="row">
   <fieldset>
     <%= simple_form_for @timeslot do |f| %>
-    <div id="timeslot_form" class="large-4 columns":>
+    <div id="timeslot_form" class="large-5 columns":>
       <h4 class="subheader">Select Date and Time</h4>
       <hr>
 
@@ -37,10 +37,10 @@
       <div id="other_text_input" class= "hidden">
         <%= f.input :other %>
       </div>
-      <hr>
     </div>
-    <div class="large-8 columns">
+    <div class="large-7 columns">
       <h4 id="cost_estimate_header" class="subheader">Cost Estimate: $<span id="cost_estimate">0</span></h4>
+      <hr>
       <div id="calendar"></div>
       <% if current_user %>
         <%= f.submit "Request Booking", :class => [:expand, :secondary, :button] %>
