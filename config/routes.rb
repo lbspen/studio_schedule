@@ -1,5 +1,7 @@
 StudioSchedule::Application.routes.draw do
 
+  get "timeslots/confirmation"
+
   root to: "timeslots#new"
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users

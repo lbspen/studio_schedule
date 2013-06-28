@@ -24,7 +24,7 @@ class TimeslotsController < ApplicationController
     @timeslot.end_time = end_time
     @timeslot.user = current_user
     if @timeslot.save
-      redirect_to @timeslot, :notice => "Timeslot has been created."
+      redirect_to timeslots_confirmation_path, :notice => "Timeslot has been created."
     else
       flash[:alert] = "Timeslot has not been created."
       render :action => "new"

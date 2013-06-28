@@ -49,5 +49,6 @@ class Timeslot < ActiveRecord::Base
       end
       errors[:base] << 'Timeslot conflicts with an existing timeslot'
     end
+
   end
 end
